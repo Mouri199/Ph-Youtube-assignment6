@@ -28,12 +28,20 @@ const loadCategory = async () => {
 
 
 
+let value;
 
-const loadInformation = async (categoryAllId) => {
+const loadInformation = async (categoryAllId = '1000') => {
+    value = categoryAllId;
     const res = await fetch(`https://openapi.programming-hero.com/api/videos/category/${categoryAllId}`);
     const data = await res.json();
+    let details = data.data;
+    visualItem(details);
+};
 
-if(data.data.length==0){
+
+const visualItem=(details) =>{
+    
+if(details.length==0){
     drawingBtn(true)
 }
 else{
@@ -42,8 +50,7 @@ else{
 
     const cardContainer = document.getElementById('card-container');
     cardContainer.innerHTML = "";
-    let details = data.data;
-
+    
 
 
 
@@ -59,12 +66,6 @@ else{
         const totalhour =(totalMin - remainingHour) / 60;
 
         const time = values.length !== 0 ? `${totalhour}hrs ${totalMin}min ago` : "";
-
-        // let time;
-        // if(values.length != 0){
-        //     time = `${totalhour}hrs ${totalMin}min ago : ""`
-        // }
-
 
 
         const div = document.createElement('div');
@@ -88,11 +89,24 @@ else{
         cardContainer.appendChild(div);
 
 
-        // console.log(details);
-
     })
+}
 
-};
+const sortingData = async() =>{
+    const res = await fetch(`https://openapi.programming-hero.com/api/videos/category/${value}`);
+    const data = await res.json();
+    let details = data.data;
+    const sortValue =details.sort((a,b)=>{
+
+        let num1 = a.others.views.slice(0,-1);
+        let num2 = b.others?.views.slice(0,-1);
+
+        return num2-num1;
+    }) 
+    visualItem(sortValue);
+}
+
+
 
 const drawingBtn=(button)=>{
 if(button){
@@ -104,6 +118,8 @@ else{
     showbtn.classList.add('hidden');
 }
 }
+
+
 
 
 loadCategory();

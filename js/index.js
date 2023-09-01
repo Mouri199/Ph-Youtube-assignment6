@@ -56,7 +56,7 @@ else{
 
     details.forEach((all) => {
 
-        let values = all.others.posted_date
+        let values = all.others.posted_date;
         const totalSec = values;
         
         const remainingMin = totalSec % 60;
@@ -65,7 +65,7 @@ else{
         const remainingHour = totalMin % 60;
         const totalhour =(totalMin - remainingHour) / 60;
 
-        const time = values.length !== 0 ? `${totalhour}hrs ${totalMin}min ago` : "";
+        const time = values.length !== 0 ? `${totalhour}hrs ${remainingHour}min ago` : "";
 
 
         const div = document.createElement('div');
@@ -73,7 +73,7 @@ else{
          max-w-[300px]`
         div.innerHTML = `
         <figure class="h-[210px]"><img src="${all.thumbnail}" />
-        <p class="posted-date absolute bottom-36 right-2 text-white">${time}</p>
+        <p class="absolute bottom-36 right-2 text-white bg-black rounded">${time}</p>
         </figure>
         <div class=" card-body flex flex-row">
             <img class="h-[40px] w-[40px] rounded-full" src="${all.authors[0].profile_picture}" alt="">

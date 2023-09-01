@@ -1,0 +1,96 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+
+    <link rel="shortcut icon" type="x-icon" href="./image/fi_3039386.svg">
+
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>PH YouTube</title>
+
+    <!-- daisy and tailwindCSS link -->
+
+    <link href="https://cdn.jsdelivr.net/npm/daisyui@3.6.4/dist/full.css" rel="stylesheet" type="text/css" />
+    <script src="https://cdn.tailwindcss.com"></script>
+
+    <!-- inter google font link -->
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Inter:wght@300;400;500;600;700;800&display=swap"
+        rel="stylesheet">
+
+
+
+    <style>
+        .font-inter {
+            font-family: 'Inter', sans-serif;
+        }
+    </style>
+</head>
+
+<body class="font-inter">
+
+    <!-- navbar section -->
+    <header>
+
+        <section class="container mx-auto">
+            <nav class="flex justify-around my-10">
+                <a href=""><img src="./image/Logo.png" alt=""></a>
+                <button id="sortBtn" onclick="sortCardViews()" class="btn hover:bg-slate-400"> Sort by View</button>
+                <button class="btn  bg-red-500 text-white hover:bg-slate-400 hover:text-black" onclick=" openBlog()">Blog</button>
+            </nav>
+            <hr class="  h-[2px] bg-[#121212]">
+        </section>
+
+    </header>
+
+
+    <!-- main section -->
+    <main>
+        <section>
+
+            <div class="button-container w-full">
+                <div id="button-container" class="flex justify-center mt-10 gap-7">
+                </div>
+            </div>
+
+        </section>
+
+        <section class="container mx-auto">
+            <div id="card-container" class="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-4  gap-4">
+                <!-- <div id="card" class="card card-compact w-96 bg-base-100 shadow-xl">
+                    <figure><img src="/image/Rectangle 1.png" alt="Shoes" /></figure>
+                    <div class="card-body flex flex-row">
+                        <img class="h-[40px] w-[40px]" src="./image/Ellipse 1.svg" alt="">
+                        <h2 class="card-title">Building a Winning UX Strategy Using the Kano Model</h2>
+                    </div>
+                  <div class="ml-16">
+                    <p>Awlad Hossain</p>
+                    <p>91K views</p>
+                  </div>
+                </div> -->
+            </div>
+            
+        </section>
+
+    </main>
+
+    <footer>
+        <div class="hidden" id="drawingBtn">
+            <div class="flex justify-center items-center flex-col mt-16">
+                <img class="h-40 w-40" src="./image/Icon.png" alt="">
+                <h1 class="text-3xl font-bold">Oops!! Sorry,There is No</h1>
+                <h1 class="text-3xl font-bold">Content here</h1>
+            </div>
+        </div>
+    </footer>
+
+
+
+
+    <!-- js file link -->
+    <script src="./js/index.js"></script>
+</body>
+
+</html>

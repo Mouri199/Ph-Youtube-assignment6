@@ -1,0 +1,142 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+
+    <link rel="shortcut icon" type="x-icon" href="./image/blog.png">
+
+    <title>Blog Question Answer</title>
+
+
+    <!-- daisy and tailwindCSS link -->
+
+    <link href="https://cdn.jsdelivr.net/npm/daisyui@3.6.4/dist/full.css" rel="stylesheet" type="text/css" />
+    <script src="https://cdn.tailwindcss.com"></script>
+
+    <!-- inter google font link -->
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Inter:wght@300;400;500;600;700;800&display=swap"
+        rel="stylesheet">
+
+
+
+    <style>
+        .font-inter {
+            font-family: 'Inter', sans-serif;
+        }
+    </style>
+
+</head>
+
+<body class="container mx-auto font-inter">
+    <div class="flex justify-center gap-24 mb-7 mt-10">
+        <img src="./image/Logo.png" alt="">
+        <button class="btn bg-red-500 text-white hover:bg-slate-500  text-4xl font-bold">BLOG</button>
+    </div>
+    <hr class="h-[2px] bg-[#121212]">
+    <h1 class="text-center text-4xl font-bold mt-5">Blog Question Answer</h1>
+    <div class="mt-10">
+        <h1 id="question-1" class="text-2xl font-bold">1.Discuss the scope of `var`, `let`, and `const`</h1>
+
+        <br>
+
+        <p id="answer-1" class="text-lg"> </p>
+
+        <span class="text-xl font-medium">Answer:</span>
+        Absolutely, let's dive into the differences between `var`, `let`, and `const` in JavaScript. These are all
+        ways to declare variables, but they behave differently in terms of scope, reassignment, and mutability.
+
+        <br>
+
+
+        <span class="font-semibold">*Var:-</span>
+        Var is a function scoped or global scope but not block scope.Var variable can be reassigned without any
+        restriction.
+
+        <br><br>
+
+        <pre>
+            <span class="font-semibold">#Example:</span>
+            function exampleVar() { 
+                if (true) {
+                    var x = 76;
+                }
+                console.log(x);
+            }
+                output = 76
+           </pre>
+
+
+        <span class="font-semibold">**Let:-</span>
+        Let is a block scoped.Variables inside var can be updated and redeclared. But let can be updated but not
+        redeclared.
+        <br><br>
+        <pre>
+                <span class="font-semibold">#Example:</span>
+                function exampleLet() {
+                if (true) {
+                    let y = 10;
+                }
+                console.log(y); 
+            }
+                output: 'y' is not defined
+            </pre>
+
+
+        <span class="font-semibold">***Const:-</span>
+        Const is a block scoped.Const cannot be updated or redeclared.
+        Var and Let can be declared without initialization, const must be initialized when declared.Const variables
+        cannot be redeclared or reassigned after their initial value has been assigned.
+        <br> <br>
+        <pre>
+            <span class="font-semibold">#Example:</span>
+            function exampleConst() {
+                const y = 30;
+                y = 40; 
+                const y = 40
+            }   
+                output: 'y' is not defined because 'y' is already declared.
+        </pre>
+
+    </div>
+
+
+
+    <div class="mt-10">
+        <h1 id="question-2" class="text-2xl font-bold">2.Tell us the use cases of `null` and `undefined`</h1> <br>
+        <p id="answer-2" class="text-lg"> <span class="text-xl font-medium">Answer:</span>
+            Null in JavaScript means an empty value and Undefined means the variable has been declared, but its value has not been assigned.
+            <br>
+            <span class="font-semibold">*Null:-</span>
+            Null is a special value that represents an empty value and also a primitive type in JavaScript.When we take the value of a variable as null that means it is empty and this variable shows that it has no value.'Null' is an object in Javascript.When we assigned to a variable it doestn't represent a value.
+            <br>
+        <pre>
+                <span class="font-semibold">#Example:</span>
+                function nullFunction() {
+                 
+                }
+                console.log(nullFunction());
+            </pre>
+        <br><br>
+        <span class="font-semibold">**Undefined:-</span>
+        Undefined means "not defined". A variable that has not been assigned a value is of type undefined.When we declare a variable but do not assign a value to it, the variable becomes undefined.When we do not pass an
+        argument for a function parameter, the default value is taken as undefined.
+        <br>
+        <pre>
+                <span class="font-semibold">#Example:</span>
+                function undefinedFunction() {
+                 
+                }
+                console.log(undefinedFunction());
+            </pre>
+
+
+        </p>
+    </div>
+    <br><br>
+</body>
+
+</html>
